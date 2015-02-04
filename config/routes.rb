@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  post 'sessions/new'
+  delete 'sessions/destroy'
+
+  resources :teachers
+
   resources :parents
 
   # The priority is based upon order of creation: first created -> highest priority.

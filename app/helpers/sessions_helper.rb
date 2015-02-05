@@ -1,6 +1,6 @@
 module SessionsHelper
   def log_in(teacher)
-  session[:id] = teacher.id
+  session[:teacher_id] = teacher.id
   end
 
   def current_user
@@ -8,7 +8,7 @@ module SessionsHelper
   end
 
   def log_out
-    session.delete(:user_id)
+    session.delete(:teacher_id)
     @current_user = nil
   end
 end

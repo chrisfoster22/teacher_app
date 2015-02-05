@@ -17,6 +17,7 @@ end
 
 def show
   @teacher = Teacher.find(params[:id])
+  @parents = Parent.where(teacher_id: @teacher.id)
 end
 
 def edit

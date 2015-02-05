@@ -1,0 +1,23 @@
+<% @parents.each do |parent| %>
+  <div class="category">
+    <h2><%= parent.parent_name %></h2>
+    <table>
+      <thead>
+        <tr>
+
+          <th>Item</th>
+          <th>Price</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= link_to "#{parent.parent_name}", edit_parent_path(parent) %></td>
+          <td><%= parent.parent_email %></td>
+          <td><%= parent.student_name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>

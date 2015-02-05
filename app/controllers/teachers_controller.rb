@@ -7,13 +7,16 @@ end
 def create
   @teacher = Teacher.new(teacher_params)
   if @teacher.save
-    redirect_to sessions_new_path, notice: 'teacher was successfully created.'
+    log_in @teacher
+    flash[:success] = "Welcome to the Sample App!"
+    redirect_to @teacher, notice: 'teacher was successfully created.'
   else
     render :new
   end
 end
 
 def show
+  @teacher = Teacher.find(params[:id])
 end
 
 def edit
@@ -58,7 +61,7 @@ end
 # end
 
 def teacher_params
-  params.require(:teacher).permit(:name, :email, :password_digest)
+  params.require(:teacher).permit(:name, :email, :password)
 end
 
 end
